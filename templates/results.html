@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Results</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Quiz Scores</th>
+        </tr>
+        {% for results in quiz_results %}
+            {% for r in results %}
+        <tr>
+            <td>{{ r[0] }}</td>
+              <td>{{ r[1] }}</td>
+              <td>{{ r[2] }}</td>
+              <td> {{ r[3] }} </td>
+              </tr>}
+            {% endfor %}
+        {% endfor %}
+    </table>
+    </body>

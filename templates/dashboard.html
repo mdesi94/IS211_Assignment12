@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+<table style="width:50%" border ="1">
+         <tr style="height:30px">
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+         </tr>
+
+         {% for grades in student_grades %}
+    {% for s in grades %}
+            <tr style="height:30px">
+               <td>{{s[0]}}</td>
+               <td>{{s[1]}}</td>
+               <td> {{s[2]}}</td>
+            </tr>
+         {% endfor %}
+    {% endfor %}
+      </table>
+<br><br>
+<table style="width:50%" border ="1">
+         <tr style="height:30px">
+            <th>Quiz ID</th>
+            <th>Subject</th>
+            <th>Total Questions</th>
+            <th>Quiz Date</th>
+         </tr>
+
+         {% for quizzes in student_quizzes %}
+            {% for x in quizzes %}
+            <tr>
+               <td>{{x[0]}}</td>
+               <td>{{x[1]}}</td>
+               <td>{{x[2]}}</td>
+               <td>{{x[3]}}</td>
+            </tr>
+            {% endfor %}
+         {% endfor %}
+      </table>
+<br>
+<br>
+<table style="width:50%" border ="1">
+         <tr style="height:30px">
+            <th>Student ID</th>
+            <th>Quiz ID</th>
+            <th>Score</th>
+         </tr>
+
+         {% for result in student_results %}
+            {% for x in result %}
+            <tr>
+               <td>{{x[0]}}</td>
+               <td>{{x[1]}}</td>
+               <td>{{x[2]}}</td>
+            </tr>
+            {% endfor %}
+         {% endfor %}
+      </table>
+    <br>
+        <a href="/student/add">Add Student</a><br>
+        <a href="/quiz/add">Add Quiz</a><br>
+        <a href="/grade/add">Add Quiz Result</a>
+        <br>
+        <a href = "/login">Log out</a>
+</body>
+</html>

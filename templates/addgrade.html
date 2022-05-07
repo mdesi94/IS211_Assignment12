@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Grade</title>
+</head>
+<body>
+  <form action = "{{ url_for('add_grade') }}" method = "POST">
+  <table>
+    <tr>
+        <td width="100">
+          <label for="student">Student: </label>
+          <select name="student" id="student">
+            {% for s in students %}
+            <option value="{{s[0]}}">{{s[1]}} - Student ID: {{s[0]}}</option>
+            {% endfor %}
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td width="100">
+          <label for="quiz">Quiz: </label>
+          <select name="quiz" id="quiz">
+            {% for q in quizzes %}
+            <option value="{{q[0]}}">{{q[1]}} - quiz_id: {{q[0]}}</option>
+            {% endfor %}
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td width="100">
+          <label for="grade">Grade: </label>
+          <input type="text" name="grade"></input>
+        </td>
+    </tr>
+    <tr>
+      <td><button class="button" type="submit" form="addgrade" value="Submit">Submit</td>
+    </tr>
+  </table>
+  </form>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a record</title>
+</head>
+<body>
+
+<form action = "{{ url_for('add_student') }}" method = "POST">
+         <h3>Add a new student to the class:</h3>
+         First Name<br>
+         <input type = "text" name = "first"/>
+    </br>
+
+         Last Name<br>
+         <input type = "text" name = "last"/><br>
+
+         <input type = "submit" value = "Add Student" /><br>
+      </form>
+</body>
+</html>
